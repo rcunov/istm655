@@ -40,7 +40,7 @@ def hashdir(strdir, algo, list):
             bytes = f.read() # read file as bytes
             readable_hash = algo(bytes).hexdigest() # output as text
             list.append(readable_hash) # add to list
-    # print ("C:\\" + pathdir.name,str(algo().name) + ":",list) # this prints the contents of the arrays
+    # print ("C:\\" + pathdir.name,str(algo().name) + ":",list) # this prints the contents of the list
 
 # declare array to store C:\integrity MD5 hashes and call hashdir function
 integrity_md5_list = []
