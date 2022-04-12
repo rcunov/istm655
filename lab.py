@@ -31,6 +31,7 @@ shutil.copytree("C:/integrity", "C:/production", dirs_exist_ok=True)
 selection = randint(1,3)
 writefile("C:/production/file" + str(selection) + ".txt", "This file has been modified! Oh no!")
 print("A hacker has modified " + "C:\\production\\file" + str(selection) + ".txt!")
+print()
 
 # define loop to hash all files in a directory with a certain algorithm
 def hashdir(strdir, algo, list):
@@ -40,7 +41,11 @@ def hashdir(strdir, algo, list):
             bytes = f.read() # read file as bytes
             readable_hash = algo(bytes).hexdigest() # output as text
             list.append(readable_hash) # add to list
-    # print ("C:\\" + pathdir.name,str(algo().name) + ":",list) # this prints the contents of the list
+    print ("C:\\" + pathdir.name,str(algo().name) + " list:",list) # this prints the contents of the list
+
+# print list of files to make output more clear
+file_list = ["file1.txt", "file2.txt", "file3.txt"]
+print("List of files:        ", file_list)
 
 # declare array to store C:\integrity MD5 hashes and call hashdir function
 integrity_md5_list = []
@@ -65,4 +70,3 @@ for x in range(3):
         print("file" + str(x+1) + ".txt has a hash mismatch! Oh no!")
     else:
         print("file" + str(x+1) + ".txt has not been changed.")
-    
